@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 50,),
           Container(
 
-            margin: EdgeInsets.only(),
+            margin: EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -101,6 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
               dotPosition: DotPosition.bottomCenter,
               showIndicator: true,
               indicatorBgPadding: 10.0,
+              borderRadius: true,
+              overlayShadow: true,
+              overlayShadowColors: primaryGreen,
+              overlayShadowSize: 0.3,
               images: [
                 NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
                 NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
@@ -114,6 +118,50 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
           ),
+          SizedBox(height: 10,),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                Container(
+                  height: 80,
+                  width: 80,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 25),
+                    height: 50,
+                    child:Text("Bike",style: TextStyle(fontWeight: FontWeight.bold,)),
+                  ),
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.black26,image: DecorationImage(image: AssetImage("images/helmate.jpg"),fit: BoxFit.fill)),
+                ),
+                SizedBox(width: 17,),
+                Container(
+                  height: 80,
+                  width: 80,
+
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.black26,image: DecorationImage(image: AssetImage("images/profile.jpg"),fit: BoxFit.fill)),
+
+                ),
+                SizedBox(width: 17,),
+                Container(
+                  height: 80,
+                  width: 80,
+
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.black26,image: DecorationImage(image: AssetImage("images/profile.jpg"),fit: BoxFit.fill)),
+                ),
+                SizedBox(width: 17,),
+                Container(
+                  height: 80,
+                  width: 80,
+
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.black26,image: DecorationImage(image: AssetImage("images/profile.jpg"),fit: BoxFit.fill)),
+                ),
+
+
+
+              ],
+            ),
+          ),
+
 
         ],
       ),

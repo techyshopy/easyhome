@@ -1,4 +1,5 @@
 import 'package:easyhome/configuration.dart';
+import 'package:easyhome/profile.dart';
 import 'package:flutter/material.dart';
 
 class DrawerScreen extends StatefulWidget {
@@ -39,7 +40,9 @@ class _DrawerScreenState extends State<DrawerScreen> {
           ListTile(
             leading: Icon(Icons.person,size: 30,color: Colors.white,),
             title: Text('Profile',style: TextStyle(fontSize: 20,color: Colors.white),),
-            onTap: (){},
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.shopping_bag,size: 30,color: Colors.white,),

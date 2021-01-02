@@ -1,6 +1,8 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easyhome/configuration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -29,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           SizedBox(height: 50,),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 20),
+
+            margin: EdgeInsets.only(),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -62,13 +65,59 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   ],
                 ),
-                CircleAvatar(),
+                CircleAvatar(
+                  backgroundImage: AssetImage("images/profile.jpg"),
+                ),
+              ],
+            ),
+          ),
+
+        // Container(
+        //
+        //   padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+        //   margin: EdgeInsets.symmetric(vertical: 30,horizontal: 20),
+        //   decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(20)),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     children: [
+        //       Icon(Icons.search),
+        //       Text("Search"),
+        //       Icon(Icons.settings),
+        //     ],
+        //   ),
+        // ),
+          SizedBox(height: 10,),
+          SizedBox(
+            height: 200.0,
+            width: 395.0,
+            child: Carousel(
+              boxFit: BoxFit.cover,
+              autoplay: true,
+              animationCurve: Curves.fastOutSlowIn,
+              animationDuration: Duration(milliseconds: 1000),
+              dotSize: 6.0,
+              dotIncreasedColor: Colors.white,
+              dotBgColor: Colors.black26,
+              dotPosition: DotPosition.bottomCenter,
+              showIndicator: true,
+              indicatorBgPadding: 10.0,
+              images: [
+                NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+                NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+                NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+                NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+                NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+                NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+                NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+                NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+
               ],
             ),
           ),
 
         ],
       ),
+
     );
   }
 }
